@@ -28,6 +28,8 @@ class EmailLoginAdmin(UserAdmin):
 # Override User's __unicode__ method to display something legible instead of
 # a hexdigest
 def __email_unicode__(self):
+    if self.get_full_name():
+        return self.get_full_name()
     return self.email
     
 User.add_to_class('__unicode__', __email_unicode__)
