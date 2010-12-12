@@ -71,6 +71,13 @@ class EmailUserCreationForm(forms.ModelForm):
         except User.DoesNotExist:
             return email
         raise forms.ValidationError(_("A user with that email address already exists."))
+    
+    def clean_password2(self):
+        password1 = self.cleaned_data.get("password1", "")
+        password2 = self.cleaned_data["password2"]
+        if password1 != password2:
+            raise forms.ValidationError(_("The two password fields didn't match."))
+        return password2
         
     def save(self, commit=True):
         user = super(EmailUserCreationForm, self).save(commit=False)
