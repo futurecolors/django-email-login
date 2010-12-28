@@ -4,7 +4,6 @@ from django.contrib.auth.models import User
 class EmailBackend(ModelBackend):
     
     def authenticate(self, email=None, password=None):
-        import pdb; pdb.set_trace()
         try:
             user = User.objects.get(email=email)
             if user.check_password(password):
