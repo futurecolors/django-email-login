@@ -6,7 +6,7 @@ packages = ['email_login']
 
 setup(
     name='email_login',
-    version='0.1',
+    version='0.2',
     description='A Django application that enables you to have your users use their email address instead of their username',
     author='Tino de Bruijn',
     author_email='tinodb@gmail.com',

@@ -37,6 +37,12 @@ Usage
         (r'^admin/', include(site.urls)),
 
    to include the admin in your root ``urls.py``.
+   
+#. To use login outside of the admin, add::
+   
+        (r'^account/', include('django.contrib.auth.urls')),
+   
+   to your ``urls.py``
 
 .. note:: 
     Your admin account needs to have an email address, otherwise you won't be
