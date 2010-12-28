@@ -1,0 +1,90 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-12-28 17:41+0100\n"
+"PO-Revision-Date: 2010-12-28 13:53+0100\n"
+"Last-Translator: Tino de Bruijn <tinodb@gmaill.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: forms.py:11 forms.py:57 forms.py:91 templates/email_login/login.html:33
+msgid "Email address"
+msgstr "Emailadres"
+
+#: forms.py:12 forms.py:58 templates/email_login/login.html:37
+msgid "Password"
+msgstr ""
+
+#: forms.py:32
+msgid ""
+"Please enter a correct email address and password. Note that both fields are "
+"case-sensitive."
+msgstr ""
+"Vul een juist emailadres en wachtwoord in. Beide velden zijn hoofdletter-"
+"gevoelig."
+
+#: forms.py:34
+msgid "This account is inactive."
+msgstr "Dit account is in-actief "
+
+#: forms.py:41
+msgid ""
+"Your Web browser doesn't appear to have cookies enabled. Cookies are "
+"required for logging in."
+msgstr ""
+
+#: forms.py:59
+msgid "Password confirmation"
+msgstr ""
+
+#: forms.py:60
+msgid "Enter the same password as above, for verification."
+msgstr ""
+
+#: forms.py:73
+msgid "A user with that email address already exists."
+msgstr "Een gebruiker met dat emailadres bestaat al."
+
+#: forms.py:79
+msgid "The two password fields didn't match."
+msgstr ""
+
+#: useradmin.py:21
+msgid "Personal info"
+msgstr ""
+
+#: useradmin.py:22
+msgid "Permissions"
+msgstr ""
+
+#: useradmin.py:23
+msgid "Important dates"
+msgstr ""
+
+#: useradmin.py:24
+msgid "Groups"
+msgstr ""
+
+#: templates/email_login/login.html:17
+msgid "Please correct the error below."
+msgid_plural "Please correct the errors below."
+msgstr[0] ""
+msgstr[1] ""
+
+#: templates/email_login/login.html:40
+msgid "I forgot my password"
+msgstr "Ik ben mijn wachtwoord vergeten"
+
+#: templates/email_login/login.html:43
+msgid "Log in"
+msgstr ""
