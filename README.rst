@@ -40,7 +40,7 @@ Usage
    
 #. To use login outside of the admin, add::
    
-        (r'^account/', include('django.contrib.auth.urls')),
+        (r'^account/', include('email_login.urls')),
    
    to your ``urls.py``
 
