@@ -12,6 +12,11 @@ admin as well as outside. Therefore, email adresses need to be unique.
 The username of the User will be the hash of it's email adress. As it means
 nothing, it will be hidden in the admin changelist view.
 
+Install
+=======
+
+Install with ``pip install django-email-login`` or checkout from Bitbucket ``hg clone https://bitbucket.org/tino/django-email-login`` and run ``python setup.py install``.
+
 Usage
 =====
 
