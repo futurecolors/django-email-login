@@ -1,0 +1,3 @@
+include README.txt LICENCE.txt
+recursive-include email_login/templates *.html
+recursive-include locale *
