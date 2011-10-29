@@ -1,8 +1,13 @@
+import base64
+import hashlib
+
 from django import forms
 from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
-from django.utils.hashcompat import sha_constructor
 from django.utils.translation import ugettext_lazy as _
+
+def email_to_username(email):
+    return base64.urlsafe_b64encode(hashlib.sha256(email).digest())[:30]
 
 class EmailAuthenticationForm(forms.Form):
     """
@@ -81,7 +86,7 @@ class EmailUserCreationForm(forms.ModelForm):
         
     def save(self, commit=True):
         user = super(EmailUserCreationForm, self).save(commit=False)
-        user.username = sha_constructor(user.email).hexdigest()[:30]
+        user.username = email_to_username(user.email)
         user.set_password(self.cleaned_data["password1"])
         if commit:
             user.save()
@@ -101,7 +106,7 @@ class EmailUserChangeForm(forms.ModelForm):
             
     def save(self, commit=True):
         user = super(EmailUserChangeForm, self).save(commit=False)
-        user.username = sha_constructor(user.email).hexdigest()[:30]
+        user.username = email_to_username(user.email)
         if commit:
             user.save()
         return user
