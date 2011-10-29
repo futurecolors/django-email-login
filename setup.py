@@ -3,8 +3,8 @@
 from distutils.core import setup
 
 setup(
-    name='email_login',
-    version='0.2',
+    name='django-email-login',
+    version='0.2.1',
     description='A Django application that enables you to have your users use their email address instead of their username',
     long_description=open('README.txt').read(),
     licences='MIT License, see LICENSE.txt',
