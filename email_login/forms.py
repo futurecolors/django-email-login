@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 from django.utils.translation import ugettext_lazy as _
 
 def email_to_username(email):
-    return base64.urlsafe_b64encode(hashlib.sha256(email).digest())[:30]
+    return base64.urlsafe_b64encode(hashlib.sha256(email.lower()).digest())[:30]
 
 class EmailAuthenticationForm(forms.Form):
     """
@@ -28,13 +28,13 @@ class EmailAuthenticationForm(forms.Form):
         super(EmailAuthenticationForm, self).__init__(*args, **kwargs)
 
     def clean(self):
-        email = self.cleaned_data.get('email')
+        email = self.cleaned_data.get('email').lower()
         password = self.cleaned_data.get('password')
 
         if email and password:
             self.user_cache = authenticate(email=email, password=password)
             if self.user_cache is None:
-                raise forms.ValidationError(_("Please enter a correct email address and password. Note that both fields are case-sensitive."))
+                raise forms.ValidationError(_("Please enter a correct email address and password."))
             elif not self.user_cache.is_active:
                 raise forms.ValidationError(_("This account is inactive."))
         self.check_for_test_cookie()
@@ -70,9 +70,9 @@ class EmailUserCreationForm(forms.ModelForm):
         
     def clean_email(self):
         """ Validates that the email address is not already in use. """
-        email = self.cleaned_data["email"]
+        email = self.cleaned_data["email"].lower()
         try:
-            User.objects.get(email=email)
+            User.objects.get(email__iexact=email)
         except User.DoesNotExist:
             return email
         raise forms.ValidationError(_("A user with that email address already exists."))
@@ -94,6 +94,7 @@ class EmailUserCreationForm(forms.ModelForm):
 
 class EmailUserChangeForm(forms.ModelForm):
     email = forms.EmailField(label=_("Email address"))
+
     class Meta:
         model = User
         exclude = ('username',)

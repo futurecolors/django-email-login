@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-28 17:41+0100\n"
+"POT-Creation-Date: 2012-04-02 16:35+0200\n"
 "PO-Revision-Date: 2010-12-28 13:53+0100\n"
 "Last-Translator: Tino de Bruijn <tinodb@gmaill.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,45 +17,42 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: forms.py:11 forms.py:57 forms.py:91 templates/email_login/login.html:33
+#: forms.py:16 forms.py:62 forms.py:96 templates/email_login/login.html:33
 msgid "Email address"
 msgstr "Emailadres"
 
-#: forms.py:12 forms.py:58 templates/email_login/login.html:37
+#: forms.py:17 forms.py:63 templates/email_login/login.html:37
 msgid "Password"
-msgstr ""
+msgstr "Wachtwoord"
 
-#: forms.py:32
-msgid ""
-"Please enter a correct email address and password. Note that both fields are "
-"case-sensitive."
-msgstr ""
-"Vul een juist emailadres en wachtwoord in. Beide velden zijn hoofdletter-"
-"gevoelig."
+#: forms.py:37
+#, fuzzy
+msgid "Please enter a correct email address and password."
+msgstr "Vul een juist emailadres en wachtwoord in."
 
-#: forms.py:34
+#: forms.py:39
 msgid "This account is inactive."
 msgstr "Dit account is in-actief "
 
-#: forms.py:41
+#: forms.py:46
 msgid ""
 "Your Web browser doesn't appear to have cookies enabled. Cookies are "
 "required for logging in."
 msgstr ""
 
-#: forms.py:59
+#: forms.py:64
 msgid "Password confirmation"
 msgstr ""
 
-#: forms.py:60
+#: forms.py:65
 msgid "Enter the same password as above, for verification."
 msgstr ""
 
-#: forms.py:73
+#: forms.py:78
 msgid "A user with that email address already exists."
 msgstr "Een gebruiker met dat emailadres bestaat al."
 
-#: forms.py:79
+#: forms.py:84
 msgid "The two password fields didn't match."
 msgstr ""
 
