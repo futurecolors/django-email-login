@@ -1,10 +1,11 @@
 #!/usr/bin/env python
  
 from distutils.core import setup
+import email_login
 
 setup(
     name='django-email-login',
-    version='0.2.1',
+    version=email_login.__version__,
     description='A Django application that enables you to have your users use their email address instead of their username',
     long_description=open('README.txt').read(),
     licences='MIT License, see LICENSE.txt',
