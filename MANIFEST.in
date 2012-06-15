@@ -1,3 +1,4 @@
-include README.txt LICENCE.txt
-recursive-include email_login/templates *.html
-recursive-include locale *
+include README.txt LICENSE.txt
+graft email_login/templates
+graft email_login/locale
+
