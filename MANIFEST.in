@@ -1,4 +1,3 @@
 include README.txt LICENSE.txt
 graft email_login/templates
 graft email_login/locale
-
