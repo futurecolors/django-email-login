@@ -26,4 +26,3 @@ setup(
     license='MIT License',
     include_package_data=True,
 )
-

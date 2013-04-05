@@ -6,8 +6,11 @@ from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
 from django.utils.translation import ugettext_lazy as _
 
+
+
 def email_to_username(email):
     return base64.urlsafe_b64encode(hashlib.sha256(email.lower()).digest())[:30]
+
 
 class EmailAuthenticationForm(forms.Form):
     """
@@ -54,6 +57,7 @@ class EmailAuthenticationForm(forms.Form):
     def get_user(self):
         return self.user_cache
 
+
 class EmailUserCreationForm(forms.ModelForm):
     """
     A form that creates a user, with no privileges, from the given email
@@ -91,6 +95,7 @@ class EmailUserCreationForm(forms.ModelForm):
         if commit:
             user.save()
         return user
+
 
 class EmailUserChangeForm(forms.ModelForm):
     email = forms.EmailField(label=_("Email address"))
