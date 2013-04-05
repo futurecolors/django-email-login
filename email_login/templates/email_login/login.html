@@ -1,8 +1,6 @@
 {% extends "email_login/base.html" %}
 {% load i18n %}
 
-{% block extrastyle %}{% load adminmedia %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% admin_media_prefix %}css/login.css" />{% endblock %}
-
 {% block bodyclass %}login{% endblock %}
 
 {% block nav-global %}{% endblock %}
@@ -12,14 +10,14 @@
 {% block breadcrumbs %}{% endblock %}
 
 {% block content %}
-{% if form.errors and not form.non_field_errors and not form.this_is_the_login_form.errors %}
+{% if form.errors and not form.non_field_errors %}
 <p class="errornote">
 {% blocktrans count form.errors.items|length as counter %}Please correct the error below.{% plural %}Please correct the errors below.{% endblocktrans %}
 </p>
 {% endif %}
 
-{% if form.non_field_errors or form.this_is_the_login_form.errors %}
-{% for error in form.non_field_errors|add:form.this_is_the_login_form.errors %}
+{% if form.non_field_errors or form.errors %}
+{% for error in form.non_field_errors|add:form.errors %}
 <p class="errornote">
     {{ error }}
 </p>
@@ -29,15 +27,14 @@
 <div id="content-main">
 <form action="{{ app_path }}" method="post" id="login-form">{% csrf_token %}
   <div class="form-row">
-    {% if not form.this_is_the_login_form.errors %}{{ form.email.errors }}{% endif %}
+    {% if not form.errors %}{{ form.email.errors }}{% endif %}
     <label for="id_email" class="required">{% trans 'Email address' %}:</label> {{ form.email }}
   </div>
   <div class="form-row">
-    {% if not form.this_is_the_login_form.errors %}{{ form.password.errors }}{% endif %}
+    {% if not form.errors %}{{ form.password.errors }}{% endif %}
     <label for="id_password" class="required">{% trans 'Password' %}:</label> {{ form.password }}
-    <input type="hidden" name="this_is_the_login_form" value="1" />
     <input type="hidden" name="next" value="{{ next }}" />
-    <input type="hidden" name="post_data" value="{{ post_data }}" /> <span class="help"><a href="{% url django.contrib.auth.views.password_reset %}">{% trans 'I forgot my password' %}</a></span>
+    <span class="help"><a href="{% url django.contrib.auth.views.password_reset %}">{% trans 'I forgot my password' %}</a></span>
   </div>
   <div class="submit-row">
     <label>&nbsp;</label><input type="submit" value="{% trans 'Log in' %}" />

@@ -7,6 +7,7 @@ from django.contrib import admin
 from django.utils.translation import ugettext_lazy as _
 from forms import EmailUserCreationForm, EmailUserChangeForm
 
+
 class EmailLoginAdmin(UserAdmin):
     add_form = EmailUserCreationForm
     form = EmailUserChangeForm
@@ -24,15 +25,17 @@ class EmailLoginAdmin(UserAdmin):
         (_('Groups'), {'fields': ('groups',)}),
     )
     list_display = ('email', 'first_name', 'last_name', 'is_staff')
-    
+
+
 # Override User's __unicode__ method to display something legible instead of
 # a hexdigest
 def __email_unicode__(self):
     if self.get_full_name():
         return self.get_full_name()
     return self.email
-    
+
+
 User.add_to_class('__unicode__', __email_unicode__)
-    
+
 admin.site.unregister(User)
 admin.site.register(User, EmailLoginAdmin)
