@@ -1,3 +1,4 @@
+Copyright (C) 2013 by Ilya Baryshev, Future Colors
 Copyright (C) 2011 by Tino de Bruijn
 
 Permission is hereby granted, free of charge, to any person obtaining a copy

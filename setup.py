@@ -4,13 +4,13 @@ from setuptools import setup
 import email_login
 
 setup(
-    name='django-email-login',
+    name='django-email-login-fc',
     version=email_login.__version__,
     description='A Django application that enables you to have your users use their email address instead of their username',
     long_description=open('README.rst').read(),
-    author='Tino de Bruijn',
-    author_email='tinodb@gmail.com',
-    url='http://bitbucket.org/tino/django-email-login',
+    author='Ilya Baryshev',
+    author_email='baryshev@futurecolors.ru',
+    url='https://github.com/futurecolors/django-email-login',
     tests_require=(
         'django-setuptest',
     ),
