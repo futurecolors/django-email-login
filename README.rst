@@ -1,6 +1,15 @@
-==================
 django-email-login
 ==================
+
+Log in via email for django 1.4. Forked from `django-email-login`_
+
+.. image:: https://travis-ci.org/futurecolors/django-email-login.png?branch=master
+    :target: https://travis-ci.org/futurecolors/django-email-login
+
+.. image:: https://coveralls.io/repos/futurecolors/django-email-login/badge.png?branch=master
+    :target: https://coveralls.io/r/futurecolors/django-email-login/
+
+.. _django-email-login: https://bitbucket.org/tino/django-email-login
 
 Goals
 =====
