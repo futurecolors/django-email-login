@@ -13,6 +13,7 @@ setup(
     url='https://github.com/futurecolors/django-email-login',
     tests_require=(
         'django-setuptest',
+        'argparse',
     ),
     test_suite='setuptest.setuptest.SetupTestSuite',
     packages=['email_login'],
