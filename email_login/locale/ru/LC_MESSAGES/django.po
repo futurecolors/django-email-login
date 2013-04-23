@@ -29,7 +29,7 @@ msgstr "Пароль"
 
 #: forms.py:37
 msgid "Please enter a correct email address and password."
-msgstr "Пара email и пароль не подходит."
+msgstr "Пожалуйста, введите корректные email и пароль."
 
 #: forms.py:39
 msgid "This account is inactive."
